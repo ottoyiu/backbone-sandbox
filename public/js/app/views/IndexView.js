@@ -1,25 +1,25 @@
 // View.js
 // -------
-define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
+define(["jquery", "backbone", "app", "models/Model", "text!templates/index.html"],
 
-    function($, Backbone, Model, template){
+    function($, Backbone, App, Model, template){
 
-        var View = Backbone.View.extend({
+        var IndexView = Backbone.View.extend({
 
             // The DOM Element associated with this view
-            el: ".example",
+            el: "#content",
 
             // View constructor
             initialize: function() {
 
                 // Calls the view's render method
                 this.render();
-
+                App.eventChannel.trigger("navToggle");
             },
 
             // View Event Handlers
             events: {
-
+						
             },
 
             // Renders the view's template to the UI
@@ -39,7 +39,7 @@ define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
         });
 
         // Returns the View class
-        return View;
+        return IndexView;
 
     }
 

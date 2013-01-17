@@ -18,6 +18,10 @@ require.config({
       "underscore": "libs/lodash",
 
       "backbone": "libs/backbone",
+			
+      // Namespace
+      "app": "app/app",
+      "BackboneEventChannelFactory": "app/BackboneEventChannelFactory",
 
       // Plugins
       // -------
@@ -74,7 +78,7 @@ require(["jquery", "backbone", "routers/DesktopRouter", "jqueryui", "bootstrap",
   function($, Backbone, DesktopRouter) {
 
     // Instantiates a new Desktop Router instance
-    new DesktopRouter();
+		new DesktopRouter();
 
   }
 
